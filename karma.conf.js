@@ -35,7 +35,7 @@ module.exports = function(config) {
     },
 
     webpack: {
-      entry: resolve(__dirname, 'src', 'index.ts'),
+      entry: resolve(__dirname, 'src', 'placeholder-module.ts'),
       module: {
         rules: [{
           test: /\.ts$/,
@@ -56,8 +56,7 @@ module.exports = function(config) {
       },
       plugins: [
         new webpack.ProvidePlugin({
-          $: 'jquery',
-          'window.Quill': 'quill'
+          $: 'jquery'
         })
       ],
       devtool: 'inline-source-map'

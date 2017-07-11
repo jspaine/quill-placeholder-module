@@ -1,4 +1,5 @@
-import PlaceholderModule from '../src'
+import * as Quill from 'quill'
+import PlaceholderModule from '../src/placeholder-module'
 
 describe('the module', function() {
   let quill

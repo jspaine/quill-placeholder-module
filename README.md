@@ -1,7 +1,12 @@
 # quill-placeholder-module
 Quill module for adding placeholders. [Demo](https://codepen.io/jspaine/pen/MozyNp)
+## Install
+```
+npm install --save quill-placeholder-module
+```
 
 ## Usage
+Requires Quill to be available globally or on window
 ```js
 import PlaceholderModule from 'quill-placeholder-module'
 // es5

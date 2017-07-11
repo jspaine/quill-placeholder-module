@@ -1,4 +1,4 @@
-import {Quill} from 'quill'
+import * as Quill from 'quill'
 import {default as ParchmentTypes} from 'parchment'
 
 import {Placeholder} from './placeholder'

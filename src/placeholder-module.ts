@@ -1,4 +1,4 @@
-import {Quill} from 'quill'
+import * as Quill from 'quill'
 import {default as ParchmentTypes} from 'parchment'
 
 import PlaceholderBlot from './placeholder-blot'
@@ -8,7 +8,7 @@ import {ModuleOptions} from './module-options'
 const Parchment: typeof ParchmentTypes = Quill.import('parchment')
 Quill.register(PlaceholderBlot)
 
-export class PlaceholderModule {
+export default class PlaceholderModule {
   private placeholders: Array<Placeholder>
 
   constructor(private quill: Quill.Quill, options: ModuleOptions) {
@@ -46,7 +46,7 @@ export class PlaceholderModule {
 
   toolbarHandler = (identifier: string) => {
     const selection = this.quill.getSelection()
-    const placeholder = this.placeholders.find((pl: Placeholder) => pl.id === identifier)
+    const placeholder = this.placeholders.filter((pl: Placeholder) => pl.id === identifier)[0]
     if (!placeholder) throw new Error(`Missing placeholder for ${identifier}`)
 
     this.quill.deleteText(selection.index, selection.length)

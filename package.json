@@ -1,18 +1,22 @@
 {
   "name": "quill-placeholder-module",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Quill module for inserting placeholders",
-  "main": "dist/index.js",
+  "main": "dist/placeholder-module.js",
   "scripts": {
     "test": "karma start",
-    "build": "webpack -p",
+    "build": "webpack",
     "dev": "webpack --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jspaine/quill-placeholder-module.git"
   },
-  "keywords": ["quill", "placeholder", "template"],
+  "keywords": [
+    "quill",
+    "placeholder",
+    "template"
+  ],
   "author": "James Paine <painejs@hotmail.com>",
   "license": "MIT",
   "bugs": {
@@ -50,5 +54,5 @@
     "LICENSE",
     "README.md"
   ],
-  "typings": "./dist/index.d.ts"
+  "typings": "./dist/src/placeholder-module.d.ts"
 }
