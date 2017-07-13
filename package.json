@@ -1,6 +1,6 @@
 {
   "name": "quill-placeholder-module",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Quill module for inserting placeholders",
   "main": "dist/placeholder-module.js",
   "scripts": {
@@ -42,12 +42,10 @@
     "karma-webpack": "^2.0.4",
     "mocha": "^3.4.2",
     "parchment": "^1.1.0",
+    "quill": "^1.2.0",
     "ts-loader": "^2.2.2",
     "typescript": "^2.4.1",
     "webpack": "^3.1.0"
-  },
-  "peerDependencies": {
-    "quill": "^1.2.0"
   },
   "files": [
     "dist",

@@ -32,14 +32,6 @@ module.exports = {
   resolve: {
     extensions: ['.ts']
   },
-  externals: {
-    quill: {
-      commonjs: 'quill',
-      commonjs2: 'quill',
-      amd: 'quill',
-      root: 'Quill'
-    }
-  },
   devtool: 'source-map',
   plugins: [
     new CopyWebpackPlugin([{from: 'src/toolbar.css', to: 'toolbar.css'}]),

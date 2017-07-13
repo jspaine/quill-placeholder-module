@@ -1,12 +1,12 @@
 import * as Quill from 'quill'
-import PlaceholderModule from '../src/placeholder-module'
+import getPlaceholderModule from '../src/placeholder-module'
 
 describe('the module', function() {
   let quill
 
   before(function() {
     fixture.setBase('test/fixtures')
-    Quill.register('modules/placeholder', PlaceholderModule)
+    Quill.register('modules/placeholder', getPlaceholderModule(Quill))
   })
 
   beforeEach(function() {

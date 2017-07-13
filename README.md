@@ -6,15 +6,14 @@ npm install --save quill-placeholder-module
 ```
 
 ## Usage
-Requires Quill to be available globally or on window
 ```js
-import PlaceholderModule from 'quill-placeholder-module'
+import getPlaceholderModule from 'quill-placeholder-module'
 // es5
-var PlaceholderModule = require('quill-placeholder-module').default
+var getPlaceholderModule = require('quill-placeholder-module').default
 // umd
-var PlaceholderModule = PlaceholderModule.default
+var getPlaceholderModule = PlaceholderModule.default
 
-Quill.register('modules/placeholder', PlaceholderModule)
+Quill.register('modules/placeholder', getPlaceholderModule(Quill))
 
 var quill = new Quill('#editor', {
   modules: {
