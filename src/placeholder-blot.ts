@@ -28,11 +28,16 @@ export default function getPlaceholderBlot(Quill: QuillTypes.Quill): any {
 
       const labelNode = document.createTextNode(label)
 
-      const wrapper = document.createElement('span')
-      wrapper.setAttribute('contenteditable', 'false')
-      wrapper.appendChild(labelNode)
+      if (Quill.version < '1.3') {
+        const wrapper = document.createElement('span')
+        wrapper.setAttribute('contenteditable', 'false')
+        wrapper.appendChild(labelNode)
 
-      node.appendChild(wrapper)
+        node.appendChild(wrapper)
+      } else {
+        node.appendChild(labelNode)
+      }
+
 
       return node
     }

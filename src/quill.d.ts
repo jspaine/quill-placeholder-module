@@ -1,5 +1,6 @@
 declare namespace Quill {
   export interface Quill {
+    version: string
     sources: {
       [source: string]: Sources
     };
