@@ -9,9 +9,14 @@ export interface ModuleType {
   new(quill: QuillTypes.Quill, options: ModuleOptions): any
 }
 
-export default function getPlaceholderModule(Quill: QuillTypes.Quill): ModuleType {
+export default function getPlaceholderModule(Quill: QuillTypes.Quill, options?: {
+  className?: string
+}): ModuleType {
   const Parchment: typeof ParchmentTypes = Quill.import('parchment')
+
   const PlaceholderBlot = getPlaceholderBlot(Quill)
+  PlaceholderBlot.className = options && options.className || 'ql-placeholder-content'
+
   Quill.register(PlaceholderBlot)
 
   class PlaceholderModule {
@@ -19,7 +24,6 @@ export default function getPlaceholderModule(Quill: QuillTypes.Quill): ModuleTyp
 
     constructor(private quill: QuillTypes.Quill, options: ModuleOptions) {
       this.placeholders = options.placeholders
-      PlaceholderBlot.className = options.className || 'ql-placeholder-content'
       PlaceholderBlot.delimiters = options.delimiters || ['{', '}']
 
       this.quill.getModule('toolbar').addHandler('placeholder', this.toolbarHandler)

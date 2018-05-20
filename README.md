@@ -13,14 +13,15 @@ var getPlaceholderModule = require('quill-placeholder-module').default
 // umd
 var getPlaceholderModule = PlaceholderModule.default
 
-Quill.register('modules/placeholder', getPlaceholderModule(Quill))
+Quill.register('modules/placeholder', getPlaceholderModule(Quill, {
+  className: 'ql-placeholder-content'  // default
+})
 
 var quill = new Quill('#editor', {
   modules: {
     toolbar: {container: `#toolbar`},
     placeholder: {
-      delimiters: ['{', '}'],               // default
-      className: 'ql-placeholder-content',  // default
+      delimiters: ['{', '}'],  // default
       placeholders: [
         {id: 'foo', label: 'Foo'},
         {id: 'required', label: 'Required', required: true}
@@ -44,3 +45,5 @@ Define the toolbar menu (a more complete example can be found in the [demo](http
 And include the css from `dist/toolbar.css`.
 
 The markup will contain (with default options) `<span class="ql-placeholder-content" data-id="placeholder-id" data-label="placeholder-label">...</span>`
+
+To transform the output check out https://github.com/jspaine/html-ast-transform
