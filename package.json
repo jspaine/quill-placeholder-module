@@ -4,6 +4,7 @@
   "description": "Quill module for inserting placeholders",
   "main": "dist/placeholder-module.js",
   "scripts": {
+    "prepublishOnly": "npm run test && npm run build",
     "test": "karma start --single-run",
     "test-watch": "karma start",
     "build": "webpack",
