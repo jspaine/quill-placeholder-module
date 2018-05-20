@@ -19,6 +19,7 @@ describe('the module', function() {
           delimiters: ['<', '>'],
           placeholders: [
             {id: 'foo', label: 'Foo'},
+            {id: 'bar', label: 'Bar'},
             {id: 'required', label: 'Required', required: true}
           ]
         }
@@ -45,14 +46,16 @@ describe('the module', function() {
     const toolbar = $(container).find('.ql-toolbar')
     const editor = $(container).find('.ql-editor')
 
-    toolbar.find('.ql-placeholder .ql-picker-item')[0].click()
+    const buttons = toolbar.find('.ql-placeholder .ql-picker-item')
+    buttons[1].click()
+
     const placeholder = editor.find('.ql-placeholder-content')
 
     expect(placeholder).to.have.property('length', 1)
     expect(placeholder.attr('class')).to.equal('ql-placeholder-content')
     expect(placeholder.attr('data-id')).to.equal('foo')
     expect(placeholder.attr('data-label')).to.equal('Foo')
-    expect(placeholder.text()).to.equal('<Foo>')
+    expect(placeholder.text()).to.contain('<Foo>')
   })
 
   it('deletes a placeholder', function() {
@@ -71,7 +74,7 @@ describe('the module', function() {
     const toolbar = $(container).find('.ql-toolbar')
     const editor = $(container).find('.ql-editor')
 
-    toolbar.find('.ql-placeholder .ql-picker-item')[1].click()
+    toolbar.find('.ql-placeholder .ql-picker-item')[2].click()
     quill.deleteText(0, 1, 'user')
 
     expect(editor.find('.ql-placeholder-content')).to.have.property('length', 1)
