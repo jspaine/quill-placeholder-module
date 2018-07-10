@@ -15,7 +15,7 @@ var getPlaceholderModule = PlaceholderModule.default
 
 Quill.register('modules/placeholder', getPlaceholderModule(Quill, {
   className: 'ql-placeholder-content'  // default
-})
+}))
 
 var quill = new Quill('#editor', {
   modules: {
